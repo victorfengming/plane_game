@@ -74,11 +74,11 @@ public class MyGameFrame extends JFrame {
     public void launchFrame() {
         this.setTitle("秋叶夏风_程序员作品");
         this.setVisible(true);
-//        给窗口设置大小
+        //        给窗口设置大小
         this.setSize(500,500);
-//        设置位置
+        //        设置位置
         this.setLocation(200,100);
-//        匿名内部类
+        //        匿名内部类
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
