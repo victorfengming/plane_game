@@ -2,6 +2,8 @@ package cn.sxt.game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -53,7 +55,7 @@ public class MyGameFrame extends JFrame {
         public void run() {
             while (true) {
 
-                System.out.println("窗口重画一次");
+//                System.out.println("窗口重画一次");
 
                 // 重画方法
                 repaint();
@@ -64,6 +66,22 @@ public class MyGameFrame extends JFrame {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    /**
+     * dingyijiapanjiantingdeneinbuleil
+     */
+
+    class KeyMonitor extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {
+            System.out.println("anxia"+e.getKeyCode());
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            System.out.println("songkai"+e.getKeyCode());
         }
     }
 
@@ -87,6 +105,8 @@ public class MyGameFrame extends JFrame {
 
         // 启动线程,窗口的线程
         new PaintThread().start();
+        // qidongjianpanjianting
+        addKeyListener(new KeyMonitor());
 
     }
 
