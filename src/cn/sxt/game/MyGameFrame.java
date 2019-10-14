@@ -15,6 +15,7 @@ public class MyGameFrame extends JFrame {
     Image plane = GameUtil.getImage("images/planesm.png");
     Image bg = GameUtil.getImage("images/bgsm.png");
 
+    // 定义飞机的位置
     int plane_x = 500;
     int plane_y = 250;
 
