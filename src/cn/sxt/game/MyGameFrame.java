@@ -70,18 +70,20 @@ public class MyGameFrame extends JFrame {
     }
 
     /**
-     * dingyijiapanjiantingdeneinbuleil
+     * 定义键盘监听的内部类
      */
 
     class KeyMonitor extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e) {
-            System.out.println("anxia"+e.getKeyCode());
+            plane.addDirection(e);
+//            System.out.println("anxia"+e.getKeyCode());
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
-            System.out.println("songkai"+e.getKeyCode());
+            plane.minusDirection(e);
+//            System.out.println("songkai"+e.getKeyCode());
         }
     }
 
@@ -91,11 +93,11 @@ public class MyGameFrame extends JFrame {
     public void launchFrame() {
         this.setTitle("秋叶夏风_程序员作品");
         this.setVisible(true);
-        //        给窗口设置大小
+        // 给窗口设置大小
         this.setSize(500,500);
-        //        设置位置
+        // 设置位置
         this.setLocation(200,100);
-        //        匿名内部类
+        // 匿名内部类
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -105,7 +107,7 @@ public class MyGameFrame extends JFrame {
 
         // 启动线程,窗口的线程
         new PaintThread().start();
-        // qidongjianpanjianting
+        // 启动键盘监听
         addKeyListener(new KeyMonitor());
 
     }
