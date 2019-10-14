@@ -84,18 +84,18 @@ public class MyGameFrame extends Frame {
         @Override
         public void keyPressed(KeyEvent e) {
             plane.addDirection(e);
-//            System.out.println("anxia"+e.getKeyCode());
+        // System.out.println("anxia"+e.getKeyCode());
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
             plane.minusDirection(e);
-//            System.out.println("songkai"+e.getKeyCode());
+        //System.out.println("songkai"+e.getKeyCode());
         }
     }
 
     /**
-     * 初始化窗口
+     * 初始化的窗口
      */
     public void launchFrame() {
         this.setTitle("秋叶夏风_程序员作品");
@@ -117,12 +117,10 @@ public class MyGameFrame extends Frame {
         // 启动键盘监听
         addKeyListener(new KeyMonitor());
 
-
         // 生成初始化炮弹50个
         for (int i = 0; i < shells.length; i++) {
             shells[i] = new Shell();
         }
-
     }
 
     public static void main(String[] args) {
