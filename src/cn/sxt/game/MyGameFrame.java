@@ -19,9 +19,9 @@ public class MyGameFrame extends JFrame {
     public void paint(Graphics g) {
         // 自动被调用.g相当于一只画笔
 
-//        将老的颜色进行保存
+        //        将老的颜色进行保存
         Color c = g.getColor();
-//        将老的字体进行保存
+        //        将老的字体进行保存
         Font f = g.getFont();
 
         g.setColor(Color.BLUE);
