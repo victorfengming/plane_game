@@ -18,11 +18,13 @@ public class MyGameFrame extends JFrame {
     Image bg = GameUtil.getImage("images/bgsm.png");
 
     Plane plane = new Plane(plane_img,250,250);
-    Plane plane2 = new Plane(plane_img,20,50);
-    Plane plane3 = new Plane(plane_img,50,20);
+//    Plane plane2 = new Plane(plane_img,20,50);
+//    Plane plane3 = new Plane(plane_img,50,20);
     int plane_x = 500;
     int plane_y = 250;
 
+    // 画炮弹出来
+    Shell shell = new Shell();
 
     @Override
     public void paint(Graphics g) {
@@ -30,11 +32,11 @@ public class MyGameFrame extends JFrame {
         g.drawImage(bg, 0, 0, null);
         g.drawImage(plane_img, plane_x, plane_y, null);
 
-        // huafeiji
+        // 画飞机
         plane.drawSelf(g);
-        plane2.drawSelf(g);
-        plane3.drawSelf(g);
 
+        // 画炮弹
+        shell.drawSelf(g);
 
     }
 
