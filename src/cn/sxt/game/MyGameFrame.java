@@ -11,7 +11,8 @@ import java.awt.event.WindowEvent;
  * 飞机游戏的主窗口
  * @author 秋叶夏风
  */
-public class MyGameFrame extends JFrame {
+public class MyGameFrame extends Frame {
+//    JFrame还是有闪烁的问题,还是用Frame吧,加入双缓冲技术就行了
 
     //    加载图片对象
     Image plane_img = GameUtil.getImage("images/planesm.png");
@@ -36,6 +37,10 @@ public class MyGameFrame extends JFrame {
         // 循环画炮弹
         for (int i = 0; i < shells.length; i++) {
             shells[i].draw(g);
+            boolean p = shells[i].getRect().intersects(plane.getRect());
+            if (p) {
+                System.out.println("相撞了");
+            }
         }
 
     }
@@ -123,6 +128,17 @@ public class MyGameFrame extends JFrame {
     public static void main(String[] args) {
         MyGameFrame f = new MyGameFrame();
         f.launchFrame();
+    }
+
+    private Image offScreenImage = null;
+
+    public void update(Graphics g) {
+        if(offScreenImage == null)
+            offScreenImage = this.createImage(Constant.GAME_WIDTH,Constant.GAME_HEIGHT);//这是游戏窗口的宽度和高度
+
+        Graphics gOff = offScreenImage.getGraphics();
+        paint(gOff);
+        g.drawImage(offScreenImage, 0, 0, null);
     }
 
 }

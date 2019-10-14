@@ -32,6 +32,9 @@ public class Plane extends GameObject{
         this.img = img;
         this.x = x;
         this.y = y;
+        this.speed = 3;
+        this.width = img.getWidth(null);
+        this.height = img.getHeight(null);
     }
 
 
