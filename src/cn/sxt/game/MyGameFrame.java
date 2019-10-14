@@ -67,7 +67,6 @@ public class MyGameFrame extends JFrame {
         }
     }
 
-
     /**
      * 初始化窗口
      */
