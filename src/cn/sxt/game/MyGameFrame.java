@@ -12,10 +12,12 @@ import java.awt.event.WindowEvent;
 public class MyGameFrame extends JFrame {
 
     //    加载图片对象
-    Image plane = GameUtil.getImage("images/planesm.png");
+    Image plane_img = GameUtil.getImage("images/planesm.png");
     Image bg = GameUtil.getImage("images/bgsm.png");
 
-    // 定义飞机的位置
+    Plane plane = new Plane(plane_img,250,250);
+    Plane plane2 = new Plane(plane_img,20,50);
+    Plane plane3 = new Plane(plane_img,50,20);
     int plane_x = 500;
     int plane_y = 250;
 
@@ -24,11 +26,12 @@ public class MyGameFrame extends JFrame {
     public void paint(Graphics g) {
 
         g.drawImage(bg, 0, 0, null);
-        g.drawImage(plane, plane_x, plane_y, null);
-        if (plane_x < 0) {
-            plane_x = 500;
-        }
-        plane_x--;
+        g.drawImage(plane_img, plane_x, plane_y, null);
+
+        // huafeiji
+        plane.drawSelf(g);
+        plane2.drawSelf(g);
+        plane3.drawSelf(g);
 
 
     }
