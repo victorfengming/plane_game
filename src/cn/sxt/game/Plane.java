@@ -36,7 +36,7 @@ public class Plane extends GameObject{
 
 
     public void addDirection(KeyEvent event) {
-        System.out.println("xiaci"+ event.getKeyCode());
+
         switch (event.getKeyCode()) {
 
             case KeyEvent.VK_LEFT:

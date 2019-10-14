@@ -18,8 +18,6 @@ public class MyGameFrame extends JFrame {
     Image bg = GameUtil.getImage("images/bgsm.png");
 
     Plane plane = new Plane(plane_img,250,250);
-//    Plane plane2 = new Plane(plane_img,20,50);
-//    Plane plane3 = new Plane(plane_img,50,20);
     int plane_x = 500;
     int plane_y = 250;
 
@@ -36,7 +34,7 @@ public class MyGameFrame extends JFrame {
         plane.drawSelf(g);
 
         // 画炮弹
-        shell.drawSelf(g);
+        shell.draw(g);
 
     }
 
