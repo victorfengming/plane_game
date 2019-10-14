@@ -11,7 +11,7 @@ import java.security.spec.MGF1ParameterSpec;
  */
 public class MyGameFrame extends JFrame {
     /**
-     * 初始化窗口
+     * 初始化窗口1
      */
     public void launchFrame() {
         this.setTitle("秋叶夏风_程序员作品");
