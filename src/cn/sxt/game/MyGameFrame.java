@@ -129,7 +129,7 @@ public class MyGameFrame extends Frame {
         MyGameFrame f = new MyGameFrame();
         f.launchFrame();
     }
-
+//
     private Image offScreenImage = null;
 
     public void update(Graphics g) {
