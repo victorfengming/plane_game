@@ -22,7 +22,7 @@ public class MyGameFrame extends JFrame {
     int plane_y = 250;
 
     // 画炮弹出来
-    Shell shell = new Shell();
+    Shell[] shells = new Shell[50];
 
     @Override
     public void paint(Graphics g) {
@@ -33,8 +33,10 @@ public class MyGameFrame extends JFrame {
         // 画飞机
         plane.drawSelf(g);
 
-        // 画炮弹
-        shell.draw(g);
+        // 循环画炮弹
+        for (int i = 0; i < shells.length; i++) {
+            shells[i].draw(g);
+        }
 
     }
 
@@ -109,6 +111,12 @@ public class MyGameFrame extends JFrame {
         new PaintThread().start();
         // 启动键盘监听
         addKeyListener(new KeyMonitor());
+
+
+        // 生成初始化炮弹50个
+        for (int i = 0; i < shells.length; i++) {
+            shells[i] = new Shell();
+        }
 
     }
 
